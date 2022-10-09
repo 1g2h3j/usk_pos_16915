@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'User')
+@section('title', 'User | Edit')
 
 @section('headscript')
 
@@ -9,7 +9,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-      <h4>Form User</h4>
+      <h4>Form User <i class="fas fa-edit"></i></h4>
     </div>
     <form action="{{ route('user.update', $user->id_user) }}" method="POST">
         @csrf
@@ -41,8 +41,8 @@
       </div>
     </div>
     <div class="card-footer">
-      <button type="submit" class="btn btn-primary">Simpan</button>
-      <a href="{{ route('user.index') }}" class="btn btn-primary">Cancel</a>
+      <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+      <a href="{{ route('user.index') }}" class="btn btn-danger">Cancel</a>
     </div>
   </form>
   </div>

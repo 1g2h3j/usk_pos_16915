@@ -10,11 +10,11 @@
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-body">
-
-                <h4 class="card-title">Buttons example</h4>
-                <a href="{{ route('user.create') }}" class="btn btn-primary">Tambah <i class="fas fa-plus"></i></a>
-
+            <div class="card-body pt-1">
+                <div class="card-header p-0">
+                    <h4>Tambah Data User</h4>
+                    <a href="{{ route('user.create') }}" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+                </div>
                 <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
                     <thead>
                         <tr>
@@ -36,7 +36,7 @@
                             <td>{{ $data->level }}</td>
                             <td>
                                 <a href="{{ url('/user/'.$data->id_user.'/edit') }}" class="btn btn-warning mr-2">Edit
-                                    <i class="fas fa-pen"></i></a>
+                                    <i class="fas fa-edit"></i></a>
                                 <a href="{{ url('/user/'.$data->id_user.'/delete') }}" class="btn btn-danger">Delete <i
                                         class="fas fa-trash"></i></a>
                             </td>
