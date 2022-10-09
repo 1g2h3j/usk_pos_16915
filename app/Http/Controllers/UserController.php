@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.tambah');
     }
 
     /**
@@ -37,7 +37,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user =  User::create($request->all());
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -57,9 +59,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_user)
     {
-        //
+        $user = User::find($id_user);
+
+        return view('user.edit', compact('user'));
     }
 
     /**
@@ -69,9 +73,20 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_user)
     {
-        //
+        $user = User::find($id_user);
+        $user->update($request->all());
+
+        return redirect()->route('user.index');
+    }
+
+    public function delete(Request $request, $id_user)
+    {
+        $user = User::find($id_user);
+        $user->delete();
+
+        return redirect()->route('user.index');
     }
 
     /**

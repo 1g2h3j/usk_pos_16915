@@ -4,67 +4,101 @@
 
 @section('headscript')
 
-@section('header', 'Data User')
+@section('header', 'Tambah Data User')
 
 @section('content')
 <div class="card">
-    <div class="card-header">
-      <h4>Horizontal Form</h4>
-    </div>
     <div class="card-body">
-      <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-3 col-form-label">Email</label>
-        <div class="col-sm-9">
-          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
-        <div class="col-sm-9">
-          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-        </div>
-      </div>
-      <fieldset class="form-group">
-        <div class="row">
-          <div class="col-form-label col-sm-3 pt-0">Radios</div>
-          <div class="col-sm-9">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-              <label class="form-check-label" for="gridRadios1">
-              First radio
-              </label>
+        <h5 class="card-title">Floating labels</h5>
+        <p class="card-title-desc">Create beautifully simple form labels that float over your input fields.</p>
+
+        <form>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingnameInput" placeholder="Enter Name">
+                <label for="floatingnameInput">Name</label>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-              <label class="form-check-label" for="gridRadios2">
-                Second radio
-              </label>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingemailInput"
+                            placeholder="Enter Email address" value="name@example.com">
+                        <label for="floatingemailInput">Email address</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <label for="floatingSelectGrid">Works with selects</label>
+                    </div>
+                </div>
             </div>
-            <div class="form-check disabled">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-              <label class="form-check-label" for="gridRadios3">
-                Third disabled radio
-              </label>
+
+            <div class="mb-3">
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="floatingCheck">
+                    <label class="form-check-label" for="floatingCheck">
+                        Check me out
+                    </label>
+                </div>
             </div>
-          </div>
-        </div>
-      </fieldset>
-      <div class="form-group row">
-        <div class="col-sm-3">Checkbox</div>
-        <div class="col-sm-9">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck1">
-            <label class="form-check-label" for="gridCheck1">
-            Example checkbox
-            </label>
-          </div>
-        </div>
-      </div>
+            <div>
+                <button type="submit" class="btn btn-primary w-md">Submit</button>
+            </div>
+        </form>
     </div>
-    <div class="card-footer">
-      <button type="submit" class="btn btn-primary">Sign in</button>
+    <!-- end card body -->
+</div>
+{{-- <div class="card">
+    <div class="card-header">
+      <h4>Form User</h4>
     </div>
-  </div>
+    <form action="{{ route('user.store') }}" method="POST">
+@csrf
+<div class="card-body">
+    <div class="form-group row">
+        <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+        <div class="col-sm-8">
+            <input type="text" name="username" class="form-control" id="inputUsername" placeholder="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-8">
+            <input type="password" name="password" class="form-control" id="inputPassword" placeholder="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputNama" class="col-sm-2 col-form-label">Nama User</label>
+        <div class="col-sm-8">
+            <input type="text" name="nama_user" class="form-control" id="inputNama" placeholder="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputLevel" class="col-sm-2 col-form-label">Level</label>
+        <div class="col-sm-8">
+            <input type="text" name="level" class="form-control" id="inputLevel" placeholder="">
+        </div>
+    </div>
+</div>
+<div class="card-footer">
+    <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+    <a href="{{ route('user.index') }}" class="btn btn-danger">Cancel</a>
+</div>
+</form>
+</div>
+
+<style>
+    ::placeholder {
+        color: #c2c2c2 !important;
+    }
+
+</style> --}}
 @endsection
 
 @section('footscript')

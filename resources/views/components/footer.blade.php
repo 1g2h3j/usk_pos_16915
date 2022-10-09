@@ -1,8 +1,14 @@
-<footer class="main-footer">
-    <div class="footer-left">
-      Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
-    </div>
-    <div class="footer-right">
-      2.3.0
-    </div>
-  </footer>
+<footer class="footer">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-6">
+              <script>document.write(new Date().getFullYear())</script> © Skote.
+          </div>
+          <div class="col-sm-6">
+              <div class="text-sm-end d-none d-sm-block">
+                  Design & Develop by Themesbrand
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>

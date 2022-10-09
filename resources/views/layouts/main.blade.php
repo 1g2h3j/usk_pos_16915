@@ -1,56 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>@yield('title')</title>
+    <head>
+        <meta charset="utf-8" />
+        <title>@yield('title')</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <!-- App favicon -->
+        <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="../node_modules/jqvmap/dist/jqvmap.min.css">
-  <link rel="stylesheet" href="../node_modules/weathericons/css/weather-icons.min.css">
-  <link rel="stylesheet" href="../node_modules/weathericons/css/weather-icons-wind.min.css">
-  <link rel="stylesheet" href="../node_modules/summernote/dist/summernote-bs4.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
-  @yield('headscript')
-</head>
+        <!-- Bootstrap Css -->
+        <link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        @yield('headscript')
+    </head>
 
-<body>
-  <div id="app">
-    <div class="main-wrapper">
-      @include('components.navbar')
-      @include('components.sidebar')
+    <body data-sidebar="dark">
 
-      <!-- Main Content -->
-      <div class="main-content">
-        <section class="section">
-          <div class="section-header">
-            <h1>@yield('header')</h1>
-          </div>
-          @yield('content')
-        </section>
-      </div>
-      @include('components.footer')
-    </div>
-  </div>
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
-  <!-- General JS Scripts -->
-  @yield('footscript')
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="../assets/js/stisla.js"></script>
-  <script src="../node_modules/simpleweather/jquery.simpleWeather.min.js"></script>
-  <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-  <script src="../node_modules/jqvmap/dist/jquery.vmap.min.js"></script>
-  <script src="../node_modules/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-  <script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
-  <script src="../node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-  <script src="../assets/js/scripts.js"></script>
-  <script src="../assets/js/custom.js"></script>
-  <script src="../assets/js/page/index-0.js"></script>
-</body>
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            
+           @include('components.navbar')
+
+            <!-- ========== Left Sidebar Start ========== -->
+            @include('components.sidebar')
+            <!-- Left Sidebar End -->
+
+            
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+              <div class="page-content">
+                <div class="container-fluid">
+              @yield('content')
+              @include('components.footer')
+                </div>
+              </div>
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- Right Sidebar -->
+        <div class="right-bar">
+            <div data-simplebar class="h-100">
+                <div class="rightbar-title d-flex align-items-center px-3 py-4">
+            
+                    <h5 class="m-0 me-2">Settings</h5>
+
+                    <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                        <i class="mdi mdi-close noti-icon"></i>
+                    </a>
+                </div>
+
+                <!-- Settings -->
+                <hr class="mt-0" />
+                <h6 class="text-center mb-0">Choose Layouts</h6>
+
+                <div class="p-4">
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
+                        <label class="form-check-label" for="light-mode-switch">Light Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch">
+                        <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-3.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input theme-choice" type="checkbox" id="rtl-mode-switch">
+                        <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
+                    </div>
+
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-4.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+                    <div class="form-check form-switch mb-5">
+                        <input class="form-check-input theme-choice" type="checkbox" id="dark-rtl-mode-switch">
+                        <label class="form-check-label" for="dark-rtl-mode-switch">Dark RTL Mode</label>
+                    </div>
+
+            
+                </div>
+
+            </div> <!-- end slimscroll-menu-->
+        </div>
+        <!-- /Right-bar -->
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!-- JAVASCRIPT -->
+        @yield('footscript')
+        <script src="../assets/libs/jquery/jquery.min.js"></script>
+        <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="../assets/libs/node-waves/waves.min.js"></script>
+
+        <!-- apexcharts -->
+        <script src="../assets/libs/apexcharts/apexcharts.min.js"></script>
+
+        <!-- dashboard init -->
+        <script src="../assets/js/pages/dashboard.init.js"></script>
+
+        <!-- App js -->
+        <script src="public/assets/js/app.js"></script>
+    </body>
 </html>
