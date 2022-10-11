@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Home;
+use App\Models\Barang;
 use Illuminate\Http\Request;
-use App\Models\User;
 
-class HomeController extends Controller
+class BarangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-       //
+        $barang = Barang::all();
+
+        return view('admin.barang.index', compact('barang'));
     }
 
     /**
@@ -25,7 +26,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.barang.tambah');
     }
 
     /**
@@ -36,50 +37,66 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $barang =  Barang::create($request->all());
+
+        return redirect()->route('barang.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function show(Home $home)
+    public function show(Barang $barang)
     {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Home  $home
+     *@param  int  $id
+     * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function edit(Home $home)
+    public function edit($id_barang)
     {
-        //
+        $barang = Barang::find($id_barang);
+
+        return view('admin.barang.edit', compact('barang'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\Barang  $barang
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Home $home)
+    public function update(Request $request, $id_barang)
     {
-        //
+        $barang = Barang::find($id_barang);
+        $barang->update($request->all());
+
+        return redirect()->route('barang.index');
+    }
+
+    public function delete(Request $request, $id_barang)
+    {
+        $barang = Barang::find($id_barang);
+        $barang->delete();
+
+        return redirect()->route('barang.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Home $home)
+    public function destroy(Barang $barang)
     {
         //
     }

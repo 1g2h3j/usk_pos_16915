@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
-use App\Models\User;
 
-class UserController extends Controller
+class TransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::all();
+        $transaksi = Transaksi::all();
 
-        return view('admin.user.index', compact('user'));
+        return view('admin.transaksi.index', compact('transaksi'));
     }
 
     /**
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.tambah');
+        //
     }
 
     /**
@@ -37,18 +37,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user =  User::create($request->all());
-
-        return redirect()->route('user.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Transaksi $transaksi)
     {
         //
     }
@@ -56,46 +54,33 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_user)
+    public function edit(Transaksi $transaksi)
     {
-        $user = User::find($id_user);
-
-        return view('admin.user.edit', compact('user'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_user)
+    public function update(Request $request, Transaksi $transaksi)
     {
-        $user = User::find($id_user);
-        $user->update($request->all());
-
-        return redirect()->route('user.index');
-    }
-
-    public function delete(Request $request, $id_user)
-    {
-        $user = User::find($id_user);
-        $user->delete();
-
-        return redirect()->route('user.index');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Transaksi $transaksi)
     {
         //
     }

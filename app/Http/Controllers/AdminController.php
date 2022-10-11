@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use Illuminate\Http\Request;
-use App\Models\User;
 
-class UserController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-
-        return view('admin.user.index', compact('user'));
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.tambah');
+        //
     }
 
     /**
@@ -37,18 +35,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user =  User::create($request->all());
-
-        return redirect()->route('user.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Admin $admin)
     {
         //
     }
@@ -56,46 +52,33 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_user)
+    public function edit(Admin $admin)
     {
-        $user = User::find($id_user);
-
-        return view('admin.user.edit', compact('user'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_user)
+    public function update(Request $request, Admin $admin)
     {
-        $user = User::find($id_user);
-        $user->update($request->all());
-
-        return redirect()->route('user.index');
-    }
-
-    public function delete(Request $request, $id_user)
-    {
-        $user = User::find($id_user);
-        $user->delete();
-
-        return redirect()->route('user.index');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Admin $admin)
     {
         //
     }
